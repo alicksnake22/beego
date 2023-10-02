@@ -741,6 +741,10 @@ func (o *rawSet) readValues(container interface{}, needCols []string) (int64, er
 
 	switch v := container.(type) {
 	case *[]Params:
+		//修改
+		if maps == nil {
+			maps = []Params{}
+		}
 		*v = maps
 	case *[]ParamsList:
 		*v = lists
